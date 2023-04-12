@@ -16,3 +16,6 @@ services:
     container_name: maven
     volumes:
       - warfile:/tmp/boxfuse-sample-java-war-hello/target/
+
+volumes:
+  warfile:
