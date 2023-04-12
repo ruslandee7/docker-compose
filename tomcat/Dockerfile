@@ -1,7 +1,7 @@
 #Сборка tomcat-контейнера
 FROM alpine:latest
 RUN apk update
-RUN apk add openjdk11 tar
+RUN apk add openjdk11
 RUN mkdir /opt/tomcat
 ADD apache-tomcat-9.0.73.tar.gz /opt/tomcat
 EXPOSE 8080
