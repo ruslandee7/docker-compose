@@ -9,7 +9,7 @@ services:
     depends_on:
       - backend
     volumes:
-      - type: bind
+      - type: volume
         source: backend:/tmp/boxfuse*/target/
         target: /opt/tomcat/webapps/
   backend:
