@@ -9,9 +9,13 @@ services:
     depends_on:
       - backend
     volumes:
-      - type: bind
-        source: backend:/tmp/boxfuse*/target/
-        target: /opt/tomcat/webapps/
+      - warfile:/opt/tomcat/webapp
+
   backend:
     build: maven/
     container_name: maven
+    volumes:
+      - warfile:/tmp/boxfuse-sample-java-war-hello/target/
+
+volumes:
+  warfile:
