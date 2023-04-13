@@ -1,6 +1,11 @@
 ---
 version: '3'
 services:
+  backend:
+    build: maven/
+    container_name: maven
+    volumes:
+      - warfile:/opt/boxfuse/target/
   web:
     build: tomcat/
     container_name: tomcat
@@ -11,10 +16,6 @@ services:
     volumes:
       - warfile:/opt/tomcat/warfile/
 
-  backend:
-    build: maven/
-    container_name: maven
-    volumes:
-      - warfile:/opt/boxfuse/target/
+
 volumes:
   warfile:
