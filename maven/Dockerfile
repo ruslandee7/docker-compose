@@ -6,6 +6,7 @@ RUN apk add openjdk8 git maven
 RUN git clone https://github.com/boxfuse/boxfuse-sample-java-war-hello.git /opt/boxfuse/
 WORKDIR /opt/boxfuse/
 RUN mvn package
+RUN mkdir /target
 VOLUME /target/
 RUN cp /opt/boxfuse/target/*.war /target/
 RUN mvn package
