@@ -8,13 +8,11 @@ services:
       - "8080:8080"
     depends_on:
       - backend
-    volumes:
-      - warfile:/opt/tomcat/webapps
+    volumes_from:
+      - backend:/opt/tomcat/webapps
 
   backend:
     build: maven/
     container_name: maven
     volumes:
-      - warfile:/tmp/boxfuse-sample-java-war-hello/target/
-volumes:
-  warfile:
+      - /tmp/boxfuse-sample-java-war-hello/target/
