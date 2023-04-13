@@ -15,7 +15,5 @@ services:
       - backend
     volumes:
       - warfile:/opt/tomcat/warfile/
-
-
 volumes:
   warfile:
