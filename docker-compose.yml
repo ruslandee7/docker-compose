@@ -1,11 +1,7 @@
 ---
 version: '3'
 services:
-  backend:
-    build: maven/
-    container_name: maven
-    volumes:
-      - exchange:/opt/boxfuse/target
+
   web:
     build: tomcat/
     container_name: tomcat
@@ -15,5 +11,10 @@ services:
       - backend
     volumes:
       - exchange:/opt/tomcat/exchange/
+  backend:
+    build: maven/
+    container_name: maven
+    volumes:
+      - exchange:/opt/boxfuse/target
 volumes:
   exchange:
