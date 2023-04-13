@@ -5,7 +5,7 @@ services:
     build: maven/
     container_name: maven
     volumes:
-      - warfile:/opt/boxfuse/target
+      - exchange:/opt/boxfuse/target
   web:
     build: tomcat/
     container_name: tomcat
@@ -14,6 +14,6 @@ services:
     depends_on:
       - backend
     volumes:
-      - warfile:/opt/tomcat/warfile/
+      - exchange:/opt/tomcat/exchange/
 volumes:
-  warfile:
+  exchange:
