@@ -5,7 +5,7 @@ services:
     build: maven/
     container_name: maven
     volumes:
-      - warfile:/opt/boxfuse/target/
+      - warfile:/opt/boxfuse/target
   web:
     build: tomcat/
     container_name: tomcat
