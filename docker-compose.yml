@@ -1,7 +1,6 @@
 ---
 version: '3'
 services:
-
   web:
     build: tomcat/
     container_name: tomcat
@@ -10,11 +9,12 @@ services:
     depends_on:
       - backend
     volumes:
-      - exchange:/opt/tomcat/exchange/
+      - warfile:/opt/tomcat/webapp
+
   backend:
     build: maven/
     container_name: maven
     volumes:
-      - exchange:/opt/boxfuse/target
+      - warfile:/tmp/boxfuse-sample-java-war-hello/target/
 volumes:
-  exchange:
+  warfile:
