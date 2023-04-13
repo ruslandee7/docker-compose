@@ -9,7 +9,7 @@ services:
     depends_on:
       - backend
     volumes_from:
-      - backend:/opt/tomcat/webapps
+      - backend:/opt/tomcat/webapp
 
   backend:
     build: maven/
