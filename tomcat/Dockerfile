@@ -6,6 +6,6 @@ RUN mkdir /opt/tomcat
 ADD https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.73/bin/apache-tomcat-9.0.73.tar.gz /
 RUN tar xvzf apache-tomcat-9.0.73.tar.gz --strip-components 1 --directory /opt/tomcat/
 RUN cd /opt/tomcat/webapp
-RUN cp ./*.war /opt/tomcat/webapps/
+RUN cp *.war /opt/tomcat/webapps/
 EXPOSE 8080
 CMD ["opt/tomcat/bin/catalina.sh", "run"]
