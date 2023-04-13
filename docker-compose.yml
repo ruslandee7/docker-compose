@@ -14,8 +14,8 @@ services:
       - "8080:8080"
     depends_on:
       - backend
-    volumes:
-      - 'warfile:/opt/tomcat/webapps/'
+    volumes_from:
+      - 'backend:/opt/tomcat/webapps/'
 
   volumes:
     warfile:
