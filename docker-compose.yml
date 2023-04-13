@@ -1,21 +1,19 @@
 ---
 version: '3'
 services:
-  backend:
-    build: maven/
-    container_name: maven
-    volumes:
-      - 'warfile:/tmp/boxfuse*/target'
-
   web:
     build: tomcat/
     container_name: tomcat
     ports:
       - "8080:8080"
-    depends_on:
-      - backend
-    volumes_from:
-      - 'backend:/opt/tomcat/webapps/'
+    depends_on: backend
+    volumes:
+      - warfile:/opt/tomcat/webapp
 
-  volumes:
-    warfile:
+  backend:
+    build: maven/
+    container_name: maven
+    volumes:
+      - warfile:/tmp/boxfuse-sample-java-war-hello/target/
+volumes:
+  warfile:
