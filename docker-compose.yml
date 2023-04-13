@@ -5,7 +5,7 @@ services:
     build: maven/
     container_name: maven
     volumes:
-      - 'warfile:/tmp/boxfuse*/target'
+      - '/tmp/warfile:/tmp/boxfuse*/target'
 
   web:
     build: tomcat/
@@ -15,7 +15,7 @@ services:
     depends_on:
       - backend
     volumes:
-      - 'warfile:/opt/tomcat/webapps/'
+      - '/tmp/warfile:/opt/tomcat/webapps/'
 
   volumes:
     warfile:
