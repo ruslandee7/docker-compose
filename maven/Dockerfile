@@ -8,4 +8,4 @@ RUN git clone https://github.com/boxfuse/boxfuse-sample-java-war-hello.git /tmp/
 #ADD pom.xml /tmp/boxfuse-sample-java-war-hello/
 WORKDIR /tmp/boxfuse-sample-java-war-hello/
 RUN mvn package
-RUN chmod +x target/*.war
+#RUN chmod +x target/*.war
