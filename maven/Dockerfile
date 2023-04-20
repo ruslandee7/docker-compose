@@ -9,4 +9,4 @@ RUN mvn package
 RUN mkdir /target
 VOLUME /target/
 RUN cp /opt/boxfuse/target/*.war /target/
-RUN mvn package
+
