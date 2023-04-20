@@ -15,6 +15,6 @@ services:
     build: maven/
     container_name: maven
     volumes:
-      temp:/tmp/boxfuse/target
+      - temp:/tmp/boxfuse/target
 volumes:
   temp:
