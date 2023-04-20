@@ -1,6 +1,12 @@
 ---
 version: '3'
 services:
+  backend:
+    build: maven/
+    container_name: maven
+    volumes:
+      - temp:/opt/boxfuse/target
+
   web:
     build: tomcat/
     container_name: tomcat
@@ -11,10 +17,5 @@ services:
     volumes:
       - temp:/opt/tomcat/webapps
 
-  backend:
-    build: maven/
-    container_name: maven
-    volumes:
-      - temp:/opt/boxfuse/target
 volumes:
   temp:
