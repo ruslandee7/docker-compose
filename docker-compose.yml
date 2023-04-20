@@ -5,7 +5,7 @@ services:
     build: maven/
     container_name: maven
     volumes:
-      - temp:/opt/boxfuse/target/
+      - docker-compose_temp:/opt/boxfuse/target/
 
   web:
     build: tomcat/
@@ -15,7 +15,7 @@ services:
     depends_on:
       - backend
     volumes:
-      - temp:/opt/tomcat/webapps/
+      - docker-compose_temp:/opt/tomcat/webapps/
 
 volumes:
-  temp:
+  docker-compose_temp:
